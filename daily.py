@@ -21,6 +21,8 @@ def cd_to_this_file_directory():
     dname = os.path.dirname(abspath)
     os.chdir(dname)
 
+cd_to_this_file_directory()
+
 with open('README.md', 'a') as myfile:
     myfile.write('.')
 
