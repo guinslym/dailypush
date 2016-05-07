@@ -41,7 +41,7 @@ def cd_to_this_file_directory():
 def append_to_file():
     """write to a file
     
-    This will add or append one dot ' .' in your file
+    This will add or append one dot ' .' in the README.md
     """
     with open('README.md', 'a') as myfile:
         myfile.write(' .')
