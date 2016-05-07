@@ -22,4 +22,4 @@ Execute the following commands:
 
 Every dot below this line is the number of times that the tool has been executed. A push is executed every hour. You can place this script on your server but make sure to run it (python daily.py) to make sure that this application run.
 
-. . . . . .
+. . . . . . .

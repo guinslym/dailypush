@@ -38,7 +38,7 @@ def cd_to_this_file_directory():
     dname = os.path.dirname(abspath)
     os.chdir(dname)
 
-def append_to_file():
+def append_a_dot_to_the_readme_md():
     """write to a file
     
     This will add or append one dot ' .' in the README.md
@@ -62,7 +62,7 @@ def execute_commands(sentences):
 
 if __name__ == '__main__':
     cd_to_this_file_directory()
-    append_to_file()
+    append_a_dot_to_the_readme_md()
     sentences = ['git add *',
       'git commit -m New-changes',
       'git push origin master'
