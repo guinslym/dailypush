@@ -28,15 +28,34 @@ def command_line(cmd):
 
 #Change to the current directory
 def cd_to_this_file_directory():
+    """Change to this file directory
+    
+    While the crontab will run your command
+    it needs to change to this directory in 
+    order to do a 'git add .'
+    """
     abspath = os.path.abspath(__file__)
     dname = os.path.dirname(abspath)
     os.chdir(dname)
 
 def append_to_file():
+    """write to a file
+    
+    This will add or append one dot ' .' in your file
+    """
     with open('README.md', 'a') as myfile:
         myfile.write(' .')
 
 def execute_commands(sentences):
+    """execute this command in your Terminal
+    
+    It will receive the command and the necessary parameters
+    to execute on your terminal
+    
+    Arguments:
+        sentences {[list]} -- the command line that you want
+        to execute
+    """
     for cmd in sentences:
         command_line(cmd.split())
 
