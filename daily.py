@@ -5,6 +5,7 @@ import subprocess
 import os
 
 ___author__= 'Guinsly Mondesir'
+"""This script is inspired from https://github.com/toxtli/dailypush"""
 
 def command_line(cmd):
     """[summary]
@@ -15,17 +16,13 @@ def command_line(cmd):
         cmd {[list]} -- a list that represent the command that 
         we will pass to the shell (Terminal)
     
-    Returns:
-        [list] -- return a 1 length string representing that the
-                  command line were well executed and with no
-                  error on the linux/Unix EXIT STATUS
+    Execption:
         [ERROR] -- raise a ValueError if an error occurs while executing
                   the commands on the terminal,
                   meaning that the EXIT STATUS is 1
     """
     try:
         s = subprocess.check_output(cmd)
-        return s.strip()
     except subprocess.CalledProcessError:
         raise ValueError('An error occurs with the command that you passed.')
 
@@ -49,7 +46,7 @@ def append_a_dot_to_the_readme_md():
     with open('README.md', 'a') as myfile:
         myfile.write(' .')
 
-def execute_commands(sentences):
+def execute_this_command_in_the_terminal(sentences):
     """execute this command in your Terminal
     
     It will receive the command and the necessary parameters
@@ -58,6 +55,8 @@ def execute_commands(sentences):
     Arguments:
         sentences {[list]} -- the command line that you want
         to execute
+    
+    Helper: This script will need the function command_line(cmd)
     """
     for cmd in sentences:
         command_line(cmd.split())
@@ -70,6 +69,6 @@ if __name__ == '__main__':
       'git commit -m New-changes',
       'git push origin master'
       ]
-    execute_commands(sentences)
+    execute_this_command_in_the_terminal(sentences)
 
 
