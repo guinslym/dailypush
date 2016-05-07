@@ -24,7 +24,7 @@ def cd_to_this_file_directory():
 cd_to_this_file_directory()
 
 with open('README.md', 'a') as myfile:
-    myfile.write('.')
+    myfile.write(' .')
 
 command_line(['git', 'add', '*'])
 command_line(['git', 'commit', '-m', 'New changes'])
