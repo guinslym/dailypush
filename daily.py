@@ -1,19 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import subprocess
 import os
 
+___author__= 'Guinsly Mondesir'
+
 def command_line(cmd):
-    """Handle the command line call
-    keyword arguments:
-    cmd = a list
-    return
-    0 if error
-    or a string for the command line output
+    """[summary]
+    
+    [description]
+    
+    Arguments:
+        cmd {[list]} -- a list that represent the command that 
+        we will pass to the shell (Terminal)
+    
+    Returns:
+        [type] -- raise a ValueError if you didn't pass the correct command
     """
     try:
         s = subprocess.check_output(cmd)
         return s.strip()
     except subprocess.CalledProcessError:
-        return 0
+        raise ValueError('An error occurs with the command that you passed.')
 
 #Change to the current directory
 def cd_to_this_file_directory():
@@ -26,8 +35,14 @@ cd_to_this_file_directory()
 with open('README.md', 'a') as myfile:
     myfile.write(' .')
 
-command_line(['git', 'add', '*'])
-command_line(['git', 'commit', '-m', 'New changes'])
-command_line(['git', 'push', 'origin', 'master'])
+sentences = [
+  'git add *',
+  'git commit -m New-changes',
+  'git push origin master'
+  ]
+
+for cmd in sentences:
+    command_line(cmd.split())
+
 
 
