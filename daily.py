@@ -16,7 +16,9 @@ def command_line(cmd):
         we will pass to the shell (Terminal)
     
     Returns:
-        [type] -- raise a ValueError if you didn't pass the correct command
+        [ERROR] -- raise a ValueError if you didn't pass the correct command
+        [list] -- return a 1 lenght string representing that the
+                  script passed
     """
     try:
         s = subprocess.check_output(cmd)
@@ -30,19 +32,22 @@ def cd_to_this_file_directory():
     dname = os.path.dirname(abspath)
     os.chdir(dname)
 
-cd_to_this_file_directory()
+def append_to_file():
+    with open('README.md', 'a') as myfile:
+        myfile.write(' .')
 
-with open('README.md', 'a') as myfile:
-    myfile.write(' .')
+def execute_commands(sentences):
+    for cmd in sentences:
+        command_line(cmd.split())
 
-sentences = [
-  'git add *',
-  'git commit -m New-changes',
-  'git push origin master'
-  ]
 
-for cmd in sentences:
-    command_line(cmd.split())
-
+if __name__ == '__main__':
+    cd_to_this_file_directory()
+    append_to_file()
+    sentences = ['git add *',
+      'git commit -m New-changes',
+      'git push origin master'
+      ]
+    execute_commands(sentences)
 
 
