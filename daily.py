@@ -16,9 +16,12 @@ def command_line(cmd):
         we will pass to the shell (Terminal)
     
     Returns:
-        [ERROR] -- raise a ValueError if you didn't pass the correct command
-        [list] -- return a 1 lenght string representing that the
-                  script passed
+        [list] -- return a 1 length string representing that the
+                  command line were well executed and with no
+                  error on the linux/Unix EXIT STATUS
+        [ERROR] -- raise a ValueError if an error occurs while executing
+                  the commands on the terminal,
+                  meaning that the EXIT STATUS is 1
     """
     try:
         s = subprocess.check_output(cmd)
