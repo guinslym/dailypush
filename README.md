@@ -12,7 +12,7 @@ Execute the following commands:
 
 > git clone .. your fork...
 
-> In your Terminal type **crontab crontab.txt** this will add a crontab that will execute each hour
+> In your Terminal type **crontab crontab.txt** this will add a crontab that will execute **each hour**
 
 > chmod +x daily.py
 
