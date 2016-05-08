@@ -44,7 +44,7 @@ def append_a_dot_to_the_readme_md():
     This will add or append one dot ' .' in the README.md
     """
     with open('README.md', 'a') as myfile:
-        myfile.write(' .')
+        myfile.write(' +')
 
 def execute_this_command_in_the_terminal(sentences):
     """execute this command in your Terminal
