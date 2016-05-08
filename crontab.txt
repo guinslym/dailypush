@@ -1,1 +1,1 @@
-*/1 * * * * python /home/dailypush/daily.py > /var/log/daily.log 2>&1
+*/1 * * * * /home/guinsly/dailypush/./daily.py > /var/log/daily.log 2>&1
