@@ -1,2 +1,1 @@
-MAILTO=guinslym@gmail.com
-*/2 * * * * /home/guinsly/dailypush/daily.py 
+*/1 * * * * ~/dailypush/daily.py > /var/log/daily.log 2>&1
